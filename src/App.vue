@@ -1,30 +1,50 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <main-comp/>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <div class="footer">
+  	<a href="#">
+  		<i class="fa-brands fa-github"></i>
+  	</a>
+	  <p>{{ new Date().getFullYear() }}<br>&copy <a href="#">Zainab</a> </p>
+  </div>
 </template>
 
+<script setup>
+import mainComp from './components/main.vue'
+</script>
+
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.footer {
+  text-align: center;
+  padding: 18px;
+  position: relative;
+  left: 0;
+  bottom: 0;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+
+.footer a{
+	font-size: 2rem;
+	color: #fff;
+	transition: color 0.4s ease;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.footer a:hover{
+	color: #0080ff
 }
+
+.footer p{
+	font-size: 15px;
+}
+
+.footer p a{
+	font-size: 15px;
+	text-decoration: none;
+	transition: all .3s ease-in-out;
+}
+.footer p a:hover{
+	color: #FC1555
+}
+
 </style>
