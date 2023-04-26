@@ -1,11 +1,12 @@
 <template>
+  <div class="head">
       <h1>Invidious Instances</h1>
       <button class="icon-btn" @click="showDialog = true">
       <i class="fas fa-question-circle"></i>
       </button>
-
+  </div>
     <div v-if="showDialog" class="dialog show">
-    <p>hello</p>
+    <dialog-box/>
     <button @click="showDialog = false">X</button>
     </div>
 
@@ -18,7 +19,7 @@
 
 <script>
 import {getCurrentInstances} from '../controllers/api/invidious.api.js'
-
+import dialogBox from "./dialogBoxContent.vue"
 export default{
   data(){
     return{
@@ -26,15 +27,12 @@ export default{
       showDialog:false,
     }
   },
-
+  components: {
+    dialogBox
+  },
   async mounted(){
     try {
       this.instances = await getCurrentInstances(); 
-      
-      this.instances.forEach((x,i)=>{
-        // statements
-        console.log(x)
-      });
     } catch (e) {
       console.log({
         get_fetch_error: e
@@ -48,7 +46,7 @@ export default{
 
 
 <style scoped>
-  .head{
+.head{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,8 +95,13 @@ ul li a {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 28px;
   color: #fff;
+  transition: color .3s ease;
+}
+
+.icon-btn:hover,:focus {
+  color: #f9ff0f
 }
 
 .dialog {

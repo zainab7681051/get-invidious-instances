@@ -3,10 +3,10 @@
   <main-comp/>
   </div>
   <div class="footer">
-  	<a href="#">
+  	<a href="https://github.com/zainab7681051/FreeYouTube" target="_blank">
   		<i class="fa-brands fa-github"></i>
   	</a>
-	  <p>{{ new Date().getFullYear() }}<br>&copy <a href="#">Zainab</a> </p>
+	  <p>{{ new Date().getFullYear() }}<br>&copy <a href="https://zainab-portfolio.web.app" target="_blank">Zainab</a> </p>
   </div>
 </template>
 
