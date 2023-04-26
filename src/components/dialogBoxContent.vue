@@ -25,5 +25,8 @@
 	.box a{
 		color: #FC1555
 	}
+	.box a:hover{
+		color: #0080ff;
+	}
 
 </style>

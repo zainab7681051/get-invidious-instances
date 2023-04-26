@@ -3,10 +3,11 @@
   <main-comp/>
   </div>
   <div class="footer">
-  	<a href="https://github.com/zainab7681051/FreeYouTube" target="_blank">
-  		<i class="fa-brands fa-github"></i>
-  	</a>
-	  <p>{{ new Date().getFullYear() }}<br>&copy <a href="https://zainab-portfolio.web.app" target="_blank">Zainab</a> </p>
+	<a href="https://github.com/zainab7681051/FreeYouTube" target="_blank">
+	<i class="fa-brands fa-github"></i>
+	</a>
+	  <p>{{ new Date().getFullYear() }}</p>
+	  <p>&copy<a href="https://zainab-portfolio.web.app" target="_blank">Zainab</a></p>
   </div>
 </template>
 
@@ -16,6 +17,9 @@ import mainComp from './components/main.vue'
 
 <style scoped>
 .footer {
+  background: #101010;
+  display: flex;
+  justify-content: space-evenly;
   text-align: center;
   padding: 18px;
   position: relative;

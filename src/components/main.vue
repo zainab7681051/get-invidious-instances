@@ -7,7 +7,10 @@
   </div>
     <div v-if="showDialog" class="dialog show">
     <dialog-box/>
-    <button @click="showDialog = false">X</button>
+    <button class="close" @click="showDialog = false">
+      <span></span>
+      <span></span>
+    </button>
     </div>
 
     <ul>
@@ -50,12 +53,9 @@ export default{
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.5rem;
+  color: #fff;
 }
-  h1 {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 36px;
-  }
   ul {
   list-style: none;
   margin-top: 50px;
@@ -67,7 +67,7 @@ export default{
 
 ul li {
   margin: 10px;
-  background-color: #fff;
+  background-color: #F5E9CF;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   padding: 20px;
@@ -81,7 +81,7 @@ ul li {
 }
 
 ul li:hover {
-  background-color: #0080ff;
+  background-color: #BACDDB;
   cursor: pointer;
 }
 
@@ -101,7 +101,7 @@ ul li a {
 }
 
 .icon-btn:hover,:focus {
-  color: #f9ff0f
+  color: #7149C6
 }
 
 .dialog {
@@ -137,13 +137,30 @@ ul li a {
   top: 0;
   right: 0;
   border-radius: 4px;
-  padding: 8px 18px;
-  font-size: 14px;
+  padding: 15px 18px;
+  width: 2rem;
+  height: 1.5rem;
   color: #333;
   cursor: pointer;
 }
-.dialog button:hover {
-  background-color: #0080ff ;
+.close span{
+  width: 100%;
+  display: block;
+  border-bottom: 2px solid #000;
+  position: absolute;
+  left: 0;
+}
+.close span:first-child{
+  top:  0.9rem;
+  transform:  rotate(45deg);
 }
 
+.close span:last-child{
+  top:  0.9rem;
+  transform:  rotate(-45deg);
+}
+
+.dialog button:hover {
+  background-color: #D21312 ;
+}
 </style>
