@@ -1,62 +1,70 @@
 <template>
   <div class="head">
-      <h1>Invidious Instances</h1>
-      <button class="icon-btn" @click="showDialog = true">
+    <h1>Invidious Instances</h1>
+    <button class="icon-btn" @click="showDialog = true">
       <i class="fas fa-question-circle"></i>
-      </button>
+    </button>
   </div>
-    <div v-if="showDialog" class="dialog show">
-    <dialog-box/>
+  <div v-if="showDialog" class="dialog show">
+    <dialog-box />
     <button class="close" @click="showDialog = false">
       <span></span>
       <span></span>
     </button>
-    </div>
+  </div>
 
-    <ul>
-      <li v-for="(ins ,i) in instances" :key="i">
-        <a :href="ins" target="_blank">{{ins}}</a>
-      </li>
-    </ul>
+  <ul>
+    <li v-for="(ins, i) in instances" :key="i">
+      <a :href="ins" target="_blank">
+        {{ ins }}
+      </a>
+    </li>
+  </ul>
 </template>
 
 <script>
-import {getCurrentInstances} from '../controllers/api/invidious.api.js'
-import dialogBox from "./dialogBoxContent.vue"
-export default{
-  data(){
-    return{
-      instances:{},
-      showDialog:false,
-    }
+import { getCurrentInstances } from "../controllers/api/invidious.api.js";
+import dialogBox from "./dialogBoxContent.vue";
+export default {
+  data() {
+    return {
+      instances: {},
+      showDialog: false,
+    };
   },
   components: {
-    dialogBox
+    dialogBox,
   },
-  async mounted(){
+  async mounted() {
     try {
-      this.instances = await getCurrentInstances(); 
+      this.instances = await getCurrentInstances();
     } catch (e) {
       console.log({
-        get_fetch_error: e
-      })
+        get_fetch_error: e,
+      });
     }
-  }
-
-}
-
+  },
+};
 </script>
 
-
 <style scoped>
-.head{
+.head {
   display: flex;
   justify-content: center;
-  align-items: center;
+  text-align: center;
   font-size: 1.5rem;
   color: #fff;
 }
-  ul {
+.head button {
+  transform: translate(-80px, -50px);
+}
+
+@media (min-width: 700px) {
+  .head button {
+    transform: none;
+  }
+}
+ul {
   list-style: none;
   margin-top: 50px;
   padding: 0;
@@ -67,7 +75,7 @@ export default{
 
 ul li {
   margin: 10px;
-  background-color: #F5E9CF;
+  background-color: #f5e9cf;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   padding: 20px;
@@ -81,7 +89,7 @@ ul li {
 }
 
 ul li:hover {
-  background-color: #BACDDB;
+  background-color: #bacddb;
   cursor: pointer;
 }
 
@@ -97,11 +105,12 @@ ul li a {
   cursor: pointer;
   font-size: 28px;
   color: #fff;
-  transition: color .3s ease;
+  transition: color 0.3s ease;
 }
 
-.icon-btn:hover,:focus {
-  color: #7149C6
+.icon-btn:hover,
+:focus {
+  color: #7149c6;
 }
 
 .dialog {
@@ -114,8 +123,7 @@ ul li a {
   background-color: rgba(0, 0, 0);
   z-index: 9999;
   opacity: 0;
-  transition: top 0.3s ease, opacity 0.3s ease;
-
+  transition: all 0.3s ease-in;
 }
 
 .dialog.show {
@@ -143,24 +151,24 @@ ul li a {
   color: #333;
   cursor: pointer;
 }
-.close span{
+.close span {
   width: 100%;
   display: block;
   border-bottom: 2px solid #000;
   position: absolute;
   left: 0;
 }
-.close span:first-child{
-  top:  0.9rem;
-  transform:  rotate(45deg);
+.close span:first-child {
+  top: 0.9rem;
+  transform: rotate(45deg);
 }
 
-.close span:last-child{
-  top:  0.9rem;
-  transform:  rotate(-45deg);
+.close span:last-child {
+  top: 0.9rem;
+  transform: rotate(-45deg);
 }
 
 .dialog button:hover {
-  background-color: #D21312 ;
+  background-color: #d21312;
 }
 </style>

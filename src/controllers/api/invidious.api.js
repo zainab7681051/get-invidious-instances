@@ -38,33 +38,3 @@ export async function getCurrentInstances() {
 	}
 
 };
-
-// export async function invidiousAPICall({
-// 	resource = 'video',
-// 	id = '',
-// 	params = {},
-// }) {
-// 	try {
-// 		let currentInstance;
-// 		currentInstance = await getCurrentInstance()
-// 		console.log({
-// 			currentInstance
-// 		});
-// 		const requestUrl = currentInstance + '/api/v1/' + resource + '/' + id + '?' + new URLSearchParams(params)
-// 			.toString()
-
-// 		const response = await fetch(requestUrl)
-
-// 		let result = await response.json();
-
-// 		if (result.error !== undefined) {
-// 			throw new Error(result.error)
-// 		}
-// 		return result;
-// 	} catch (e) {
-// 		console.log({
-// 			invidiousAPICall_error: e
-// 		});
-// 	}
-
-// }

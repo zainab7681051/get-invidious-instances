@@ -3,7 +3,7 @@
   <main-comp/>
   </div>
   <div class="footer">
-	<a href="https://github.com/zainab7681051/FreeYouTube" target="_blank">
+	<a href="https://github.com/zainab7681051/get-invidious-instances" target="_blank">
 	<i class="fa-brands fa-github"></i>
 	</a>
 	  <p>{{ new Date().getFullYear() }}</p>

@@ -1,6 +1,6 @@
 <template>
 	<div class="box">
-		<img src="invidious-colored-vector.svg" alt="">
+		<img src="https://invidious.io/invidious-colored-vector.svg" alt="">
 		<p><span style="font-weight: 700; color:#0080ff">Invidious</span> is an open-source alternative front-end to YouTube</p>
 		<p>what you see are the servers that are hosting free, ad-less Invidious instance where you can watch, download and save YouTube content without having to go back to YouTube.</p>
 
