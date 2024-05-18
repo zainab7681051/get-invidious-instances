@@ -7,7 +7,7 @@
 	<i class="fa-brands fa-github"></i>
 	</a>
 	  <p>{{ new Date().getFullYear() }}</p>
-	  <p>&copy<a href="https://zainab-portfolio.web.app" target="_blank">Zainab</a></p>
+	  <p>&copy<a href="https://zainab7681051.github.io/zainab.portfolio/" target="_blank">Zainab</a></p>
   </div>
 </template>
 
